@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using MovieWeb.Data;
-using MovieWeb.Models;
+using MovieDataAccess.Data;
+using MovieModels.Models;
+
 
 namespace MovieWeb.Controllers
 {

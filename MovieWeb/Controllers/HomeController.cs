@@ -10,7 +10,7 @@ namespace MovieWeb.Controllers
             return View();
         }
         [HttpGet]
-        public IActionResult NotFound()
+        public IActionResult NotFoundPage()
         {
             return View();
         }
