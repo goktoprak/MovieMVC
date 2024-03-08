@@ -1,0 +1,64 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["Title"] = "Movies";
+}
+
+@model List<Movie>
+
+<div class="row">
+    <div class="col-6">
+        <h2>
+            MOVIES
+        </h2>
+    </div>
+    <div class="col-6 text-end">
+        <a asp-controller="Movie" asp-action="Create" class="btn btn-primary">
+            <i class="bi bi-plus-circle"></i>
+            Create
+        </a>
+    </div>
+</div>
+<div class="row pt-4">
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>
+                    ID
+                </th>
+                <th>
+                    Name
+                </th>
+                <th>
+                    Edit
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var movie in Model)
+            {
+                <tr>
+                    <td>
+                        @movie.MovieID
+                    </td>
+                    <td>
+                        @movie.Title
+                    </td>
+                    <td>
+                        <div class="w-75 btn-group" role="group">
+                            <a asp-controller="Movie" asp-action="Edit" asp-route-id="@movie.MovieID" class="btn btn-primary">
+                                <i class="bi bi-pencil-square"></i>
+                                Edit
+                            </a>
+                            <a asp-controller="Movie" asp-action="Delete" asp-route-id="@movie.MovieID" class="btn btn-danger">
+                                <i class="bi bi-trash"></i>
+                                Delete
+                            </a>
+                        </div>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
